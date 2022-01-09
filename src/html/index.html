@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="sfmlib.js"></script>
+    <script type="text/javascript">
+      createSfmModule().then(function (Module) {
+        const rawData = [
+          -1001, 1000, 1000,
+          1000, -1001, 1000,
+          -1001, -1001, 1000,
+        ];
+        const data = new Module.VectorOfDouble();
+        rawData.forEach(i => data.push_back(i));
+        const problem = new Module.ProblemClass(data, 3, 3, 7);
+        console.log("problem: ", problem.toString());
+        console.log("problem.getData: ", problem.getData());
+        console.log("problem.getData.size: ", problem.getData().size());
+        console.log("problem.getData[0]: ", problem.getData().get(0));
+        console.log("problem.getData[1]: ", problem.getData().get(1));
+        console.log("problem.getData[2]: ", problem.getData().get(2));
+        console.log("problem.getData[3]: ", problem.getData().get(3));
+        console.log("problem.getN: ", problem.getN());
+        console.log("problem.getM: ", problem.getM());
+        console.log("problem.getMaxNumberOfSolutions: ", problem.getMaxNumberOfSolutions());
+
+        var result = Module.SolverClass.solve(problem);
+        console.log("result.toFullString(): ", result.toFullString());
+        console.log("result.getSolutions.size: ", result.getSolutions().size());
+        console.log("result.getCosts.size: ", result.getCosts().size());
+        for (let i = 0; i < result.getCosts().size(); i++) {
+          const cost = result.getCosts().get(i);
+          console.log("result.getCosts[" + i + "]: ", cost);
+        }
+        console.log("result.isError: ", result.isError());
+      });
+    </script>
+  </head>
+  <body>
+    <p>See the page source and the console log</p>
+  </body>
+</html>

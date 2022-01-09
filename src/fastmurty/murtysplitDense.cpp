@@ -3,7 +3,7 @@ Michael Motro github.com/motrom/fastmurty 4/2/19
 */
 #ifndef SPARSE
 
-#include "murtysplitDense.h"
+#include "murtysplitDense.hpp"
 
 WorkvarsforSplit allocateWorkvarsforSplit(int m, int n){
     WorkvarsforSplit workvars;

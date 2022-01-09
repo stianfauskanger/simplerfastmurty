@@ -1,24 +1,14 @@
-CC = gcc
+CXX = g++
 
-CFLAGS  = -g -Wall -Wfatal-errors -O3
+CFLAGS  = -g -Wall -Wfatal-errors -O3 -D DENSE -D NDEBUG
 
-# add this to compile sparse version
-CFLAGS += -D SPARSE
-
-# remove this to compile debug version (slower but with some checks for errors)
-CFLAGS += -D NDEBUG
-
-CFILES = subproblem.c queue.c sspDense.c sspSparse.c murtysplitDense.c murtysplitSparse.c da.c
-
-#TARGET = mhtda
-# $(TARGET): $(CFILES)
-#	$(CC) $(CFLAGS) -o $(TARGET) $(CFILES)
+CFILES = src/fastmurty/*.cpp
 
 SLIB = mhtda.so
 $(SLIB): $(CFILES)
-	$(CC) $(CFLAGS) -shared -fPIC -o $(SLIB) $(CFILES)
+	$(CXX) $(CFLAGS) -shared -fPIC -o $(SLIB) $(CFILES)
 
 all: $(SLIB)
 
 clean:
-	rm $(SLIB)
+	rm -f $(SLIB)

@@ -3,7 +3,7 @@ Michael Motro github.com/motrom/fastmurty 4/2/19
 */
 #include <string.h> // memcpy
 #include <stddef.h> // size_t
-#include "da.h" // many types and functions
+#include "da.hpp" // many types and functions
 
 /*
 queue of problems

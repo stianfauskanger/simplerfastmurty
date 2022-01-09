@@ -3,11 +3,11 @@ Michael Motro github.com/motrom/fastmurty 4/2/19
 */
 #ifdef SPARSE
 
-#include "murtysplitSparse.h"
+#include "murtysplitSparse.hpp"
 
 WorkvarsforSplit allocateWorkvarsforSplit(int m, int n) {
 	WorkvarsforSplit workvars;
-	char* buffer = malloc(sizeof(double)*m + sizeof(int)*m + sizeof(bool)*n);
+	char* buffer = (char*) malloc(sizeof(double)*m + sizeof(int)*m + sizeof(bool)*n);
 	assert(buffer != NULL);
 	workvars.row_cost_estimates = (double*) buffer;
 	workvars.row_best_columns = (int*)(workvars.row_cost_estimates + m);

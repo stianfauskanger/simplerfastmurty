@@ -1,15 +1,23 @@
 /**
 Michael Motro github.com/motrom/fastmurty 4/2/19
 */
-#ifndef SPARSE
+#ifdef SPARSE
 
-#include "subproblem.h"
+#include "subproblem.hpp"
+#include "sparsematrix.hpp" // cs_di
 
-typedef double* inputmatrixtype;
+typedef cs_di inputmatrixtype;
+
+typedef struct Pathtype{
+    double val;
+    int i;
+    int j;
+} Pathtype;
 
 typedef struct WorkvarsforSSP {
-	double* distances;
+	Pathtype* Q;
 	int* pathback;
+	int m;
 	int n;
 } WorkvarsforSSP;
 
@@ -21,7 +29,7 @@ void deallocateWorkvarsforSSP(WorkvarsforSSP workvars);
 Runs the successive shortest paths algorithm to find the best association for a problem.
 Returns the total cost of the association.
 */
-double SSP(double* c, Subproblem* prb, WorkvarsforSSP* workvars);
+double SSP(cs_di c, Subproblem* prb, WorkvarsforSSP* workvars);
 
 /*
 Runs a single shortest path step to find the best association for a subproblem given the
@@ -29,6 +37,6 @@ solution to the originating problem.
 Returns the increase in cost between the new and originating solutions.
 If the increase in cost is greater than cost_bound, stops early and returns infinity.
 */
-double spStep(double* c, Subproblem* prb, WorkvarsforSSP* workvars, double cost_bound);
+double spStep(cs_di c, Subproblem* prb, WorkvarsforSSP* workvars, double cost_bound);
 
 #endif

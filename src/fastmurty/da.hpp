@@ -4,12 +4,12 @@ Michael Motro github.com/motrom/fastmurty 4/2/19
 #ifndef _DA_H_
 #define _DA_H_
 
-#include "queue.h"
+#include "queue.hpp"
 // which modules are actually compiled is determined by the SPARSE preprocessor definition
-#include "sspSparse.h"
-#include "sspDense.h"
-#include "murtysplitSparse.h"
-#include "murtysplitDense.h"
+#include "sspSparse.hpp"
+#include "sspDense.hpp"
+#include "murtysplitSparse.hpp"
+#include "murtysplitDense.hpp"
 
 /*
 The necessary memory space is allocated separately from the function, in the expectation

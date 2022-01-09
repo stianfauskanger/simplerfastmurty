@@ -1,8 +1,8 @@
 /**
 Michael Motro github.com/motrom/fastmurty 4/2/19
 */
-#include "subproblem.h"
 #include <string.h> // memcpy
+#include "subproblem.hpp"
 
 Subproblem allocateSubproblem(int m, int n, char *buffer) {
 	Subproblem prb;

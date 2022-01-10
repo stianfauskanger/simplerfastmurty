@@ -6,5 +6,9 @@
 https://github.com/motrom/fastmurty
 
 ## Usage
-"make" will make a shared library file "sfmlib.so" in out/lib/, a wasm module and js-wrapper in out/wasm/, and an executable "out/example" file.
+"make" will make:
+* A shared library file "sfmlib.so" in out/lib/
+* A WASM library and JS-wrapper in out/wasm/
+* An executable file "out/example"
+* An NPM package in out/npm
 Emscripten ( https://emscripten.org/ ) must be setup to build sfmlib.wasm

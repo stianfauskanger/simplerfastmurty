@@ -1,0 +1,28 @@
+{
+  "name": "@fauskanger/sfmlib",
+  "version": "0.1.0-alpha+001",
+  "description": "Simpler Fast Murty Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stianfauskanger/simplerfastmurty.git"
+  },
+  "keywords": [
+    "sfmlib",
+    "assignment-problem"
+  ],
+  "author": "Stian Fauskanger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stianfauskanger/simplerfastmurty/issues"
+  },
+  "homepage": "https://github.com/stianfauskanger/simplerfastmurty#readme",
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  }
+}

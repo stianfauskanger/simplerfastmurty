@@ -2,3 +2,4 @@
 *.so
 /.idea/
 /out/
+/src/npm-package/node_modules/

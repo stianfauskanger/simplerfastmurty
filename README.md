@@ -11,4 +11,5 @@ https://github.com/motrom/fastmurty
 * A WASM library and JS-wrapper in out/wasm/
 * An executable file "out/example"
 * An NPM package in out/npm
+
 Emscripten ( https://emscripten.org/ ) must be setup to build sfmlib.wasm
